@@ -26,6 +26,7 @@
    static Node insert(Node root,int val)
     {
        
+       
        // if this is the first node to be inserted.
        if(root == null) {
            Node node = new Node();
