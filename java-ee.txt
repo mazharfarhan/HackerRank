@@ -1,0 +1,37 @@
+Primeface plugin for interactive web design
+
+#############
+
+JSP is the java's EE web programming language. Java Server Pages is used for creating dynamic web applications. It bridges the gap between
+html and java codes with additional featueres like expressions, servlet tags and others.
+
+Both the JSP and JSF have similar syntax for expressions where the only difference is that JSP uses $ symbol where as JSF uses #. In JSF, as we know we use the class name with the small first letter. Unless their is an explicit name defined in the name annotation.
+
+The expression language example
+  <h: panelGroup rendered="#{not empty track.cargo}"  # track is the class name
+  The above syntax is checking if the value cargo is not empty based on which it will render the view with the component.
+  
+ Use of implicit HTTP request object
+    <a href= "#{request.contextPath}"
+##################################  
+
+In modern Java EE, annotations has replaced xml files, convention over configuration has replaced tedious manual configurations and dependency injection hides resource creation and look up. We just need a POJO(plain old java object) with annotations to have a EJB
+
+EJB encapsulates the business logic. The container provides various EJB services like thread safety, mointoring and transaction, pooling.
+Two types of Enterprise java beans : 
+a. Session beans
+b. Message driven beans
+
+Session beans implement business logic, They are going to be stateful, stateless or singleton. They also hold specific client related data.
+
+There is only one type pof workflow bean - message driven bean. They cannot be directly accessed by the client. The only way to communicate with them is through messages.
+
+Access modes of EJB's
+
+a. Local (default): Within the container.
+b. Remote : External application
+c. Web Service: client using web serice protocol.
+
+Management modes: 
+a.Container access: Convention over configuration.
+b. Bean access itself: Developers with the help service annotations.
