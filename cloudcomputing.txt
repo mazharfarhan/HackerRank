@@ -1,0 +1,39 @@
+Queue is a first in first out data structure. Reomoval from the head of the queue and insertion at the tail.
+A process is a program in action. A program counter is an index in code which tells where the program is executing right now. Stack is used by a process to pass arguments and return values. When a process takes a snapshot, it captures the current status of the program counter, the contents in the stack and the heap.
+
+###################
+
+CLoud = Lot of storage + compute cycles nearby
+
+FOur characterstics of cloud: 
+a. Massive Scale
+b. On demand acess : Pay as you go
+c. Data intensive nature
+d. New Cloud Programming paradigms. - Process the data - MapReduce, Storage paradigms - NoSQL and Key value store.
+
+Cloud is a distributed systems which follows a client-server architecture to distribute services. Operating systems manages the different components and services of a device.
+
+OS functionality
+a.  Manages the hardware using device drivers.
+b. Provides abstractions for file management and process management.
+c. Resource Manager
+
+A distributed system is a collection of entites each of which are programmable, autonomous, asynchronous and failure prone which communicate over an unreliable communication medium.
+  It is different from parallel systems where the clocks of the systems are synchromized.
+Many processes sending and recieving messages through the unreliable medium in a distributed system.
+
+Challenges that we might face while designing a distributed system
+a. Scalability
+b. Failures: failure are a norm not an exception
+c.Asynchroncy
+d. COncurrency
+##########################################
+
+Map Reduce: Map is a meta function that applies any operation to a list of elements.
+Reduce is a meta function that process group of records in batch.
+
+Map process individual enities into intermedidate key-value pairs. The records are processed independently of each other. One map task runs through the records sequentially.
+
+The reduce process and merges the key value pair from the map task on a per key basis. Reduce phase cannot process the records independently. We want the values belonging to one key to appear at the same reducer so that they can get merged.
+  The partioning of keys to reducers can be done with many methods
+  a. Hash partioning:  Hash the key. Modulo of number of reduce servers. That will give the number to where to send the key
