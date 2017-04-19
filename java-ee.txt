@@ -35,3 +35,31 @@ c. Web Service: client using web serice protocol.
 Management modes: 
 a.Container access: Convention over configuration.
 b. Bean access itself: Developers with the help service annotations.
+
+  Inside the stateless EJB, the methods are transactional in nature. The transactionality is taken care by the container through a proxy mechanism. The methods are thread safe and montiored as well . Just we have to annotate them with the EJB annotation.
+#############################################
+
+Java Messaging Service: This belongs in the data access layer where it provides access to the datastore
+  It is used for passing messages in an asynchronous, scalable and secure manner amoong the distributed applications. Asynchronous means the sender and reciever of the message need not access the message queue at the same time. 
+ USes cases: a. The application should be able to send the message without having to wait for a response.
+ b. Sender does not depend on the reciever's interface so that reciever can easily be replaced.
+ c. The application should be able to run when the reciver is down.
+ 
+ Decoupling of the sender and the reciever.
+ 
+ The destination is where the message is sent which is either referred as a queue or a topic.
+ The place where message originates is called a sender or a publisher.
+ Subscriber or reciever is the place where message terminates.
+ Messages will have payload that is extracted by the reciever.
+ 
+ Messages can be text, byte, stream, object and map 
+ 
+ In point in to point setup, messages are send to the single reciever through queues. If the reciever is down, then the messages are queued up in the message queue.
+ In case of publisher/subscriber setup, messages are sent to multiple subscribers The destination is called a topic.
+ ;ksjk;js;kdjk;sjdk
+ 
+ 
+ 
+
+  
+  
