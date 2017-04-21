@@ -56,7 +56,7 @@ Java Messaging Service: This belongs in the data access layer where it provides 
  
  In point in to point setup, messages are send to the single reciever through queues. If the reciever is down, then the messages are queued up in the message queue.
  In case of publisher/subscriber setup, messages are sent to multiple subscribers The destination is called a topic.
- ;ksjk;js;kdjk;sjdk
+ 
  
  
  
