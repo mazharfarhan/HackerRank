@@ -37,3 +37,55 @@ Map process individual enities into intermedidate key-value pairs. The records a
 The reduce process and merges the key value pair from the map task on a per key basis. Reduce phase cannot process the records independently. We want the values belonging to one key to appear at the same reducer so that they can get merged.
   The partioning of keys to reducers can be done with many methods
   a. Hash partioning:  Hash the key. Modulo of number of reduce servers. That will give the number to where to send the key
+
+Application Examples
+a. Distributed grep: Looking for a line that matches a pattern in a distributed cluster
+b. Reverse web link graph: Find pages that point to a particular page.
+c. Sorting: Map reduce engine does some sorting internally. Because both the mapper and reducer does sorting internally, we can sort the given input by just passing it through them. Partioning has to be range partioning to maintain the order.
+###########################
+
+Map Reduce Scheduling:
+  The scheduler is responsible for parallelize mappers and reducers, transferring data between them and to provide storage for their input and output. 
+   None of the reduce tasks can start until the map tasks are done. The storage for the input and the output is provided on a distributed file system.
+   
+   A file block is replicated multiple times(typically 3) on different servers.
+ * The output of the map task is not stored on the distributed system but on the local disk where it is running.
+ * The reduce input is read from these remote disks.
+ * We use the local system as it fast 
+ 
+ YARN scheduler is used for scheduling purpose. It uses containers to run the map and reduce tasks. The main components of YARN
+ a. Resource manager: Runs the scheduler
+ b. Node manager (per server): Manages the tasks on each of the server
+ c. Application MAster (per job): Responsible for negotiating the containers between the above two components. Detecting failure of tasks as well.
+########################
+
+Map Reduce Fault Tolerance:
+  Server faiure" The Node manager keeps sending the heartbeats to the resource manager.
+  The node manager also keeps track of the task and whenever it fails it can restart it or let the resource manager know the task has failed.
+  
+  The RM can fail in which case there will be a backup to take its place.
+  
+Slow nodes: Slow nodes will slow down the entire job.
+  Sol: Replicating the tasks which are been running slow. (Speculative execution)
+  Which ever of the copy completes first will cause the job to be completed.
+  
+Locality: The map reduce engine tries to schedule a task on the machine which has a replica of the input data. Usually 3 replica are made of each file block. 
+  If the containers on the server are taken, then the scheduler tries to put it on the same rack as that of the map task.
+  
+ Scheduling the reduce task on particular server are not possible as the input to the reduce task can come from potentially all the map tasks.
+#################################
+
+Gossip protocols
+  the problem that is being solved by these protocols are the multicast problem. The multicast where you want to send information to other members of your group. Broadcast is to send information to all the nodes in the network.
+  
+  Requirements:
+    a. Fault tolerance: Nodes may fail, packets dropped. But still group should recieve message 
+    b. Scalability
+    
+  Multicast protocols are implemented at the application level.
+  
+  Approaches: Centralized approach
+ 
+  
+ 
+ 
