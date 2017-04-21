@@ -84,8 +84,16 @@ Gossip protocols
     
   Multicast protocols are implemented at the application level.
   
-  Approaches: Centralized approach
- 
+  Approaches: Centralized approach: Sent packets to recipents through UDP or TCP.
+  UDP - Connectionless and unreliable but cheap and less overhead.
+  TCP - Connection oriented
+  Problems: a. If the sender loops fails midway, only half of the recievers would recieve the msg.
+  b. IF the list of recievers is large, it could take O(n) time/
+  
+  Tree based approach:
+    Spanning tree is created among the nodes in the group. If it is a balanced tree then messages will reach others in O(logn) (height of the tree)
+  
+   Problems: a. Maintaining the tree . In case of a node failure at top, all the descendents stop recieving msgs.
   
  
  
