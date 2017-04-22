@@ -1,0 +1,26 @@
+Software process
+a,. Waterfall model : Rigid steps
+b. Evolutionary prototyping
+c. UML
+d. Agile methodology
+
+Phases
+Requirement engineering : What kind of system we want to build.
+Design: High levl structure of our system
+Implementation: Writing code
+Verification and validation
+Maintaince
+
+Verification - Did we build the system right
+Validation - Did we build the right system. It can be performed at different levels
+  * Unit level - Did individual units work as expected
+  * Integration level - Did interaction between units work
+  * System - All the system works well.
+
+Maintaince: a. Bug report - Correctice maintaince
+b. Feature request - perfective --!!---
+c. New system and libraries - Adaptive --""--
+
+  Regression testing is done after each software modification to check if the new changes introduced any bugs in the system.
+Software lifecycle model is a presecrtive way of telling how to do stuff from start to end.
+
