@@ -58,7 +58,10 @@ Java Messaging Service: This belongs in the data access layer where it provides 
  In case of publisher/subscriber setup, messages are sent to multiple subscribers The destination is called a topic.
  
  
- 
+ #############
+ JSON processing API
+   The object model creates a tree that represents the JSON data. It is slower than the streaming model.
+   The streaming model is an event based parser.
  
 
   
