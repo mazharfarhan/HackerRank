@@ -95,5 +95,11 @@ Gossip protocols
   
    Problems: a. Maintaining the tree . In case of a node failure at top, all the descendents stop recieving msgs.
   
+##############################################################
+
+Membership protocols
+
+   MAintaining a full list - Strong consistency 
+   Almost complete list - weaky consistent
  
- 
+ Set of process communicating over an ureliable network.
